@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONE CONNECT: Unified Engagement & Communication Program | Aikawa Philippines Inc.</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f9fafc; color: #333; }
+  header { background: #003366; color: #fff; padding: 40px 20px; text-align: center; }
+  h1 { margin-bottom: 10px; font-size: 2em; }
+  h2 { color: #003366; margin-top: 30px; border-left: 5px solid #003366; padding-left: 10px; }
+  section { background: white; margin: 20px auto; padding: 20px; border-radius: 10px; width: 90%; max-width: 1000px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
+  footer { text-align: center; background: #003366; color: white; padding: 15px; margin-top: 40px; }
+  .accordion { background-color: #e9f2ff; color: #003366; cursor: pointer; padding: 15px; width: 100%; border: none; text-align: left; outline: none; font-size: 16px; border-radius: 6px; transition: 0.4s; margin-bottom: 8px; }
+  .active, .accordion:hover { background-color: #cce0ff; }
+  .panel { padding: 0 18px; display: none; background-color: white; overflow: hidden; border-left: 3px solid #003366; margin-bottom: 15px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+  .box { background: #e9f2ff; padding: 15px; border-radius: 8px; border-left: 5px solid #003366; }
+  .progress-container { width: 100%; background: #eee; border-radius: 20px; margin: 10px 0; }
+  .progress-bar { height: 20px; width: 0%; background: #003366; border-radius: 20px; transition: width 2s; }
+  .counter { font-size: 24px; color: #003366; font-weight: bold; }
+  form { background: #eef5ff; padding: 15px; border-radius: 8px; }
+  input, textarea, select { width: 100%; padding: 8px; margin: 6px 0 12px 0; border: 1px solid #ccc; border-radius: 6px; }
+  button { background: #003366; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; }
+  button:hover { background: #0055aa; }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>ONE CONNECT</h1>
+  <p><strong>Unified Engagement & Communication Program</strong><br>
+  Aikawa Philippines Inc.<br>
+  <em>Bridging Teams. Building Culture. Boosting Connection.</em></p>
+</header>
+
+<section>
+  <h2>🎯 Program Objectives</h2>
+  <button class="accordion">View Objectives</button>
+  <div class="panel">
+    <ul>
+      <li>Unite deskless and desk-based employees through effective communication.</li>
+      <li>Scale recognition, culture, and engagement across all teams.</li>
+      <li>Empower leaders to build community and connection.</li>
+      <li>Drive engagement from the ground up across Aikawa.</li>
+    </ul>
+  </div>
+
+  <h2>📊 Live Engagement Tracker</h2>
+  <p>Engagement Progress (2025 Goal: 70% company-wide participation)</p>
+  <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+  <p><span class="counter" id="progressCounter">0</span>% engaged employees</p>
+</section>
+
+<section>
+  <h2>🧩 4C Framework</h2>
+  <button class="accordion">CONNECT</button>
+  <div class="panel"><p>Unify people through tools, digital town halls, and departmental bulletin boards.</p></div>
+
+  <button class="accordion">CELEBRATE</button>
+  <div class="panel"><p>Recognize employees with monthly awards, peer shoutouts, and annual ONE CONNECT Awards.</p></div>
+
+  <button class="accordion">COMMUNITY</button>
+  <div class="panel"><p>Build belonging through Team Champions, Employee Clubs, and inter-departmental buddy systems.</p></div>
+
+  <button class="accordion">COMMUNICATE & CASCADE</button>
+  <div class="panel"><p>Ensure timely and transparent information flow through newsletters, leader cascades, and dashboards.</p></div>
+</section>
+
+<section>
+  <h2>📅 Implementation Timeline</h2>
+  <div class="grid">
+    <div class="box"><strong>Phase 1 – Launch:</strong> Introduce ONE CONNECT brand, goals, and tools.</div>
+    <div class="box"><strong>Phase 2 – Foundations:</strong> Appoint champions, launch recognition, gather feedback.</div>
+    <div class="box"><strong>Phase 3 – Culture in Motion:</strong> Start clubs, town halls, and storytelling.</div>
+    <div class="box"><strong>Phase 4 – Empower & Evaluate:</strong> Train leaders, review data, and celebrate success.</div>
+  </div>
+</section>
+
+<section>
+  <h2>🌟 Recognition Nomination Form</h2>
+  <form>
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" placeholder="Enter your name" required>
+
+    <label for="nominee">Nominee Name:</label>
+    <input type="text" id="nominee" placeholder="Who are you recognizing?" required>
+
+    <label for="reason">Reason for Nomination:</label>
+    <textarea id="reason" rows="3" placeholder="Describe what they did well..." required></textarea>
+
+    <label for="category">Award Category:</label>
+    <select id="category">
+      <option>Teamwork</option>
+      <option>Innovation</option>
+      <option>Safety Star</option>
+      <option>Customer Focus</option>
+      <option>Leadership</option>
+    </select>
+
+    <button type="button" onclick="submitNomination()">Submit Nomination</button>
+  </form>
+  <p id="formMsg" style="color:green; font-weight:bold;"></p>
+</section>
+
+<section>
+  <h2>📈 Success Metrics</h2>
+  <ul>
+    <li>95% communication reach weekly</li>
+    <li>70% monthly recognition participation</li>
+    <li>+15% engagement score after 12 months</li>
+    <li>10% turnover reduction</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2025 Aikawa Philippines Inc. | ONE CONNECT Employee Engagement Program</p>
+</footer>
+
+<script>
+// Accordion Function
+var acc = document.getElementsByClassName("accordion");
+for (let i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+// Progress Bar Animation
+let progress = 0;
+const bar = document.getElementById("progressBar");
+const counter = document.getElementById("progressCounter");
+const interval = setInterval(() => {
+  if (progress >= 68) clearInterval(interval);
+  progress++;
+  bar.style.width = progress + "%";
+  counter.textContent = progress;
+}, 30);
+
+// Form Simulation
+function submitNomination() {
+  document.getElementById("formMsg").innerText = "✅ Thank you! Your nomination has been received.";
+  setTimeout(() => { document.getElementById("formMsg").innerText = ""; }, 4000);
+}
+</script>
+
+</body>
+</html>
